@@ -53,6 +53,7 @@ fs.rmSync(path.join(dest,'request_modifier_rule.json'),{force:true});
 delete m.commands.openAiWritingModal;
 fs.writeFileSync(mf,JSON.stringify(m,null,2)+'\n');
 buildUI();
+require('./release-brand.cjs').finish(dest);
 function buildUI(){
  // Data read from the upstream bundle (languages, service icons), then a type
  // check, then the two pages with their shared chunks into the extension root.

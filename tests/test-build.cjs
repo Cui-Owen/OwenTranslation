@@ -16,16 +16,30 @@ test('build inventory matches all release files',()=>{
  }
 });
 test('brand and removed writing command',()=>{assert.equal(manifest.name,'欧文翻译');assert.equal(manifest.action.default_title,'欧文翻译');assert.ok(!manifest.commands.openAiWritingModal);});
+test('release display branding and service headers belong to Owen Translation',()=>{
+ function scan(dir){for(const entry of fs.readdirSync(dir,{withFileTypes:true})){
+  const file=path.join(dir,entry.name);if(entry.isDirectory())scan(file);
+  else if(/\.(?:js|json|html|css)$/.test(entry.name))assert.doesNotMatch(fs.readFileSync(file,'utf8'),/沉浸式翻[译譯]|Immersive Translate/i,file);
+ }}
+ scan(extension);
+ for(const name of ['default_config.json','default_config.content.json']){
+  const headers=JSON.parse(read(name)).translationServices.openrouter.headerConfigs;
+  assert.equal(headers['X-Title'],'Owen Translation');
+  assert.equal(headers['HTTP-Referer'],'https://github.com/Cui-Owen/OwenTranslation');
+ }
+ assert.equal(manifest.version_name,'欧文翻译 v1');
+});
 test('manifest references only existing kept resources',()=>{
  const paths=[manifest.background.service_worker,manifest.options_page,manifest.action.default_popup,...Object.values(manifest.icons),...manifest.content_scripts.flatMap(x=>x.js||[]),...manifest.web_accessible_resources.flatMap(x=>x.resources),...(manifest.declarative_net_request?.rule_resources || []).map(x=>x.path)];
  for(const f of paths){assert.ok(fs.existsSync(path.join(extension,f)),f);assert.ok(!/^(?:pdf|image|wasm|tesseract|browser-bridge)\//.test(f),f);}
 });
 test('single settings entry and minimal permissions',()=>{assert.equal(manifest.options_page,'options.html');assert.deepEqual(manifest.permissions,['storage','activeTab','contextMenus','declarativeNetRequestWithHostAccess','sidePanel']);assert.equal(manifest.declarative_net_request,undefined);assert.ok(!fs.existsSync(path.join(extension,'request_modifier_rule.json')));assert.ok(!read('popup.html').includes('magpie-popup-link'));assert.deepEqual(Object.keys(JSON.parse(read('locales.json'))).sort(),['en','zh-CN','zh-HK','zh-TW'].sort());});
-test('OCR and AIFW resources removed, player hooks byte-identical',()=>{
+test('OCR and AIFW resources removed, player hooks retain their logic',()=>{
  for(const d of ['pdf','image','wasm','tesseract','browser-bridge','aifw','offscreen.js','offscreen.html'])assert.ok(!fs.existsSync(path.join(extension,d)),d);
- function compare(dir){for(const x of fs.readdirSync(path.join(extension,dir),{withFileTypes:true})){let p=path.join(dir,x.name);if(x.isDirectory())compare(p);else assert.deepEqual(fs.readFileSync(path.join(extension,p)),fs.readFileSync(path.join(root,'upstream',p)),p);}}
+ const display=require('../scripts/release-brand.cjs').display;
+ function compare(dir){for(const x of fs.readdirSync(path.join(extension,dir),{withFileTypes:true})){let p=path.join(dir,x.name);if(x.isDirectory())compare(p);else assert.equal(fs.readFileSync(path.join(extension,p),'utf8'),display(fs.readFileSync(path.join(root,'upstream',p),'utf8')),p);}}
  compare('video-subtitle');
- assert.deepEqual(fs.readFileSync(path.join(extension,'content_guard.js')),fs.readFileSync(path.join(root,'upstream','content_guard.js')),'content_guard.js');
+ assert.equal(read('content_guard.js'),display(fs.readFileSync(path.join(root,'upstream','content_guard.js'),'utf8')),'content_guard.js');
 });
 for(const file of ['background.js','side-panel.js','content_main.js'])test(file+' final merged configuration rejects old/remote re-enablement',()=>{
  const ast=acorn.parse(read(file),{sourceType:'module',ecmaVersion:'latest'});

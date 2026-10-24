@@ -25,26 +25,13 @@ with zipfile.ZipFile(archive) as package:
     for name in names:
         assert package.read('欧文翻译/' + name) == (extension / name).read_bytes(), name
 
-before = sum(p.stat().st_size for p in (root / 'upstream').rglob('*') if p.is_file() and '_metadata' not in p.parts)
-after = sum((extension / name).stat().st_size for name in names)
 report = {
-    'version': info['version'], 'scope': info['scope'],
+    'version': info['version'],
     'archive': str(archive.relative_to(root)), 'archiveBytes': archive.stat().st_size,
     'sha256': sha256(archive.read_bytes()).hexdigest(),
-    'files': len(names), 'baselineBytes': before, 'extensionBytes': after,
-    'reductionBytes': before - after, 'reductionPercent': round(100 * (before - after) / before, 2)
+    'files': len(names),
+    'extensionBytes': sum((extension / name).stat().st_size for name in names)
 }
-previous = output / '欧文翻译-0.2-B.zip'
-if previous.exists():
-    with zipfile.ZipFile(previous) as package:
-        entries = [entry for entry in package.infolist() if not entry.is_dir()]
-        previous_bytes = sum(entry.file_size for entry in entries)
-    report['previousRelease'] = {
-        'archive': str(previous.relative_to(root)), 'files': len(entries),
-        'extensionBytes': previous_bytes,
-        'reductionBytes': previous_bytes - after,
-        'reductionPercent': round(100 * (previous_bytes - after) / previous_bytes, 2)
-    }
 (output / 'release.json').write_text(json.dumps(report, indent=2, ensure_ascii=False) + '\n')
 (output / 'SHA256SUMS.txt').write_text(f"{report['sha256']}  {archive.name}\n")
 print(json.dumps(report, indent=2, ensure_ascii=False))

@@ -39,7 +39,7 @@ module.exports=ctx=>{
   }
  }
  const bg=ctx.file('background.js');
- bg.replace(0,0,`{const originalFetch=globalThis.fetch.bind(globalThis);globalThis.fetch=(input,init)=>{const url=typeof input==='string'||input instanceof URL?String(input):input.url;if(owenVendorUrl(url))return Promise.reject(new Error('原厂网络服务已移除'));return originalFetch(input,init);};}\n`,'service-worker original-vendor network boundary');
+ bg.replace(0,0,`{const originalFetch=globalThis.fetch.bind(globalThis);globalThis.fetch=(input,init)=>{const url=typeof input==='string'||input instanceof URL?String(input):input.url;if(owenVendorUrl(url))return Promise.reject(new Error('此网络服务不可用，请选择翻译服务'));return originalFetch(input,init);};}\n`,'service-worker original-vendor network boundary');
 };
 module.exports.finish=dest=>{
  const locales=JSON.parse(fs.readFileSync(path.join(dest,'locales.json'),'utf8'));

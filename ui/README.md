@@ -1,6 +1,6 @@
 # 欧文翻译界面（工具栏弹窗、设置页、文本侧栏）
 
-工具栏弹窗 `popup.html`、设置页 `options.html` 与文本侧栏 `side-panel.html` 由本目录源码构建，不再使用原版界面。翻译引擎（后台、网页脚本、侧栏引擎）保持不变，界面通过引擎已有的消息接口读写配置和控制页面。
+工具栏弹窗 `popup.html`、设置页 `options.html` 与文本侧栏 `side-panel.html` 由本目录源码构建。翻译引擎（后台、网页脚本、侧栏引擎）保持不变，界面通过引擎已有的消息接口读写配置和控制页面。
 
 ## 技术栈与依赖规则
 
@@ -36,7 +36,7 @@
 | 页面状态 | `content:popup_res:<tabId>`（主框架）：`getPageStatus`、`getCurrentPageLanguage`、`setCurrentPageLanguageByClient` |
 | 术语库 | `queryAllTermsMeta`、`queryTerms`、`saveTerms`、`deleteTerms` |
 
-写入键与原版设置页逐项一致（服务选择沿用 `userTranslationServices`，网站规则沿用 `translationUrlPattern` 等），旧配置无需迁移。设置页兼容原有路由，侧栏与网页里的 `options.html#services`、`#terms`、`#advanced` 等链接继续可用。
+写入键由配置层统一管理（服务选择沿用 `userTranslationServices`，网站规则沿用 `translationUrlPattern` 等），旧配置无需迁移。设置页兼容原有路由，侧栏与网页里的 `options.html#services`、`#terms`、`#advanced` 等链接继续可用。
 
 ## 文本侧栏
 
