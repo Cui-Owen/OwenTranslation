@@ -1,0 +1,111 @@
+/*
+ * 朱批 selection card (brand canvas, board 07). Appended to the selection modal
+ * CSS inside its shadow root. Paper card, hairline header, the original in a
+ * quiet serif, the translation large and marked with the vermilion seal dot.
+ */
+.immersive-translate-modal.selection-translation-sentence-modal {
+  background-color: #ffffff;
+  color: #15171c;
+  border: 1px solid #e2e2dc;
+  border-radius: 12px;
+  padding: 0 16px 10px;
+  box-shadow: 0 2px 4px rgba(21, 23, 28, 0.06), 0 16px 36px rgba(21, 23, 28, 0.16);
+  font-family: Inter, "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", system-ui, sans-serif;
+}
+.dark.immersive-translate-modal.selection-translation-sentence-modal {
+  background-color: #17191e;
+  color: #ecebe6;
+  border-color: #2a2d34;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+.selection-translation-sentence-modal > .immersive-translate-modal-title {
+  padding: 10px 0;
+  margin: 0 -16px 12px;
+  padding-inline: 16px 12px;
+  border-bottom: 1px solid #ecece7;
+}
+.dark.selection-translation-sentence-modal > .immersive-translate-modal-title {
+  border-bottom-color: #24272e;
+}
+.selection-translation-sentence-modal .immersive-translate-modal-title-left svg {
+  width: 22px;
+  height: 22px;
+}
+.selection-translation-sentence-modal .immersive-translate-service-select {
+  background: #f4f4f1;
+  border-radius: 8px;
+}
+.dark.selection-translation-sentence-modal .immersive-translate-service-select {
+  background: #1f2228;
+}
+.selection-translation-sentence-modal .select-service-name {
+  font-family: "JetBrains Mono", "SF Mono", ui-monospace, Menlo, monospace;
+  font-size: 12px;
+}
+
+.selection-translation-sentence-modal .selection-translation-source-card {
+  background: transparent;
+  padding: 0;
+  min-height: 0;
+  border: 0;
+}
+.selection-translation-sentence-modal .selection-translation-source-text {
+  font-family: Georgia, "Noto Serif SC", "Songti SC", serif;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #5c616c;
+}
+.dark .selection-translation-sentence-modal .selection-translation-source-text,
+.dark.selection-translation-sentence-modal .selection-translation-source-text {
+  color: #9a9da6;
+}
+
+.selection-translation-sentence-modal .selection-translation-result-card {
+  position: relative;
+  background: transparent;
+  padding: 2px 0 0 16px;
+  border: 0;
+}
+.selection-translation-sentence-modal .selection-translation-result-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.78em;
+  width: 6px;
+  height: 6px;
+  background: #e2412a;
+}
+.dark.selection-translation-sentence-modal .selection-translation-result-card::before {
+  background: #ff6b4f;
+}
+.selection-translation-sentence-modal .sentences-translation-text {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.55;
+  color: #15171c;
+}
+.dark.selection-translation-sentence-modal .sentences-translation-text {
+  color: #ecebe6;
+}
+
+.selection-translation-sentence-modal .icon-wrapper,
+.selection-translation-sentence-modal .icon-wrapper-no-bg {
+  background: transparent;
+  border-radius: 6px;
+}
+.selection-translation-sentence-modal .icon-wrapper:hover,
+.selection-translation-sentence-modal .icon-wrapper-no-bg:hover {
+  background: #f4f4f1;
+}
+.dark.selection-translation-sentence-modal .icon-wrapper:hover,
+.dark.selection-translation-sentence-modal .icon-wrapper-no-bg:hover {
+  background: #26292f;
+}
+.selection-translation-sentence-modal .selection-translation-footer {
+  border-top: 1px solid #ecece7;
+  margin: 8px -16px 0;
+  padding: 6px 12px 0;
+}
+.dark.selection-translation-sentence-modal .selection-translation-footer {
+  border-top-color: #24272e;
+}

@@ -1,0 +1,40 @@
+{
+  "name": "owen-translation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "欧文翻译：网页文字、视频字幕与 AI 智能分句",
+  "scripts": {
+    "build": "node scripts/build.cjs",
+    "typecheck": "tsc -p ui/tsconfig.json",
+    "test": "node tests/test-build.cjs",
+    "package": "python3 scripts/package.py"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "4.3.3",
+    "@types/chrome": "0.3.6",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.2",
+    "acorn": "8.15.0",
+    "acorn-walk": "8.3.4",
+    "pngjs": "7.0.0",
+    "tailwindcss": "4.3.3",
+    "terser": "5.44.0",
+    "typescript": "7.0.2",
+    "vite": "8.3.5"
+  },
+  "dependencies": {
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "cmdk": "1.1.1",
+    "lucide-react": "1.61.0",
+    "radix-ui": "1.8.1",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "sonner": "2.0.8",
+    "tailwind-merge": "3.7.0"
+  },
+  "overrides": {
+    "lightningcss": "1.33.0"
+  }
+}

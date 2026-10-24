@@ -1,0 +1,185 @@
+{
+  "PdfProFile": {
+    "message": "AI-vezérelt PDF Pro fordítás"
+  },
+  "babelDOC": {
+    "message": "BabelDOC PDF-formázás megtartása"
+  },
+  "brandDescription": {
+    "message": "Weboldalak, PDF-ek és EPUB-könyvek kétnyelvű fordítása, videók kétnyelvű feliratozása. Támogatja többek között a ChatGPT, a DeepL és a Gemini használatát."
+  },
+  "brandDescriptionForSafari": {
+    "message": "Ingyenes weboldal fordítás, PDF & Epub eBook fordítás, Videó felirat fordítása kétnyelvűre"
+  },
+  "brandName": {
+    "message": "欧文翻译"
+  },
+  "closeSidePanel": {
+    "message": "Oldalpanel bezárása"
+  },
+  "legacyShortcut_openAiWritingModal": {
+    "message": "[Elavult] Az AI Write ablak megnyitása"
+  },
+  "legacyShortcut_toggleMouseHoverTranslateDirectly": {
+    "message": "[Elavult] A közvetlen fordítás ideiglenes be- vagy kikapcsolása az egérmutatóval az oldalon"
+  },
+  "legacyShortcut_toggleOnlyTransation": {
+    "message": "[Elavult] Váltás csak fordítás módra"
+  },
+  "legacyShortcut_toggleSidePanel": {
+    "message": "[Elavult] Oldalpanel megnyitása/bezárása"
+  },
+  "legacyShortcut_toggleTranslatePage": {
+    "message": "[Elavult] Weboldal lefordítása / eredeti szöveg megjelenítése"
+  },
+  "legacyShortcut_toggleTranslateTheMainPage": {
+    "message": "[Elavult] Az oldal fő tartalmának lefordítása / eredeti szöveg megjelenítése"
+  },
+  "legacyShortcut_toggleTranslateTheWholePage": {
+    "message": "[Elavult] A teljes oldal lefordítása / eredeti szöveg megjelenítése"
+  },
+  "legacyShortcut_toggleTranslateToThePageEndImmediately": {
+    "message": "[Elavult] Azonnali fordítás az oldal aljáig / eredeti szöveg megjelenítése"
+  },
+  "legacyShortcut_toggleTranslationMask": {
+    "message": "[Elavult] A lefordított szöveg elmosásának be- és kikapcsolása (tanulási mód) az aktuális oldalon"
+  },
+  "legacyShortcut_toggleVideoSubtitlePreTranslation": {
+    "message": "[Elavult] Videófeliratok váltása az Immersive Translate funkcióval"
+  },
+  "legacyShortcut_translateInputBox": {
+    "message": "[Elavult] Az aktuális beviteli mező tartalmának lefordítása"
+  },
+  "legacyShortcut_translateWithBing": {
+    "message": "[Elavult] Az aktuális oldal ideiglenes lefordítása a Microsoft Translator segítségével"
+  },
+  "legacyShortcut_translateWithClaude": {
+    "message": "[Elavult] A Claude ideiglenes használata az aktuális oldal lefordításához"
+  },
+  "legacyShortcut_translateWithCustom1": {
+    "message": "[Elavult] Egyedi fordítási szolgáltatás ideiglenes használata az aktuális oldal fordításához (1)"
+  },
+  "legacyShortcut_translateWithCustom2": {
+    "message": "[Elavult] Egyedi fordítási szolgáltatás ideiglenes használata az aktuális oldal fordításához (2)"
+  },
+  "legacyShortcut_translateWithCustom3": {
+    "message": "[Elavult] Egyedi fordítási szolgáltatás ideiglenes használata az aktuális oldal fordításához (3)"
+  },
+  "legacyShortcut_translateWithDeepL": {
+    "message": "[Elavult] Az aktuális oldal ideiglenes lefordítása a DeepL segítségével"
+  },
+  "legacyShortcut_translateWithGemini": {
+    "message": "[Elavult] Az aktuális oldal ideiglenes lefordítása a Gemini segítségével"
+  },
+  "legacyShortcut_translateWithGoogle": {
+    "message": "[Elavult] Az aktuális oldal ideiglenes lefordítása a Google segítségével"
+  },
+  "legacyShortcut_translateWithOpenAI": {
+    "message": "[Elavult] Az aktuális oldal ideiglenes lefordítása az OpenAI segítségével"
+  },
+  "legacyShortcut_translateWithTransmart": {
+    "message": "[Elavult] Az aktuális oldal ideiglenes lefordítása a Tencent Translator segítségével"
+  },
+  "openAboutPage": {
+    "message": "Rólunk / Visszajelzés / Támogató"
+  },
+  "openAiWritingModal": {
+    "message": "AI Write modál megnyitása"
+  },
+  "openEbookBuilder": {
+    "message": "Kétnyelvű EPUB e-könyvek létrehozása"
+  },
+  "openEbookViewer": {
+    "message": "Helyi e-könyvek olvasása"
+  },
+  "openOptionsPage": {
+    "message": "Beállítások oldal megnyitása"
+  },
+  "openSidePanel": {
+    "message": "Oldalpanel megnyitása"
+  },
+  "shortBrandName": {
+    "message": "欧文翻译"
+  },
+  "textTranslate": {
+    "message": "Szövegfordítás"
+  },
+  "toggleMouseHoverTranslateDirectly": {
+    "message": "Ideiglenesen engedélyezze vagy tiltsa le a közvetlen fordítást az egérrel az oldalon történő lebegtetéssel."
+  },
+  "toggleOnlyTransation": {
+    "message": "Csak fordítás üzemmódra váltás"
+  },
+  "toggleSidePanel": {
+    "message": "Oldalpanel megnyitása/bezárása"
+  },
+  "toggleTranslatePage": {
+    "message": "Fordítsa le {targetLanguage} nyelvre"
+  },
+  "toggleTranslatePageOfficialPage": {
+    "message": "Weboldal lefordítása/eredeti szöveg megjelenítése"
+  },
+  "toggleTranslateTheMainPage": {
+    "message": "Főoldal lefordítása /Eredeti szöveg megjelenítése"
+  },
+  "toggleTranslateTheWholePage": {
+    "message": "Teljes oldal lefordítása/eredeti szöveg megjelenítése"
+  },
+  "toggleTranslateToThePageEndImmediately": {
+    "message": "Azonnali fordítás az oldal aljára/az eredeti szöveg megjelenítése"
+  },
+  "toggleTranslationMask": {
+    "message": "Az aktuális oldal lefordított szövegének elmosódása (tanulási mód) bekapcsolása"
+  },
+  "toggleVideoSubtitlePreTranslation": {
+    "message": "Videófelirat váltás a Merev fordítási funkcióval"
+  },
+  "translateInputBox": {
+    "message": "Az aktuális beviteli mező tartalmának lefordítása"
+  },
+  "translateLocalHtmlFile": {
+    "message": "HTML/txt fájl fordítása"
+  },
+  "translateLocalPdfFile": {
+    "message": "Helyi PDF fájl fordítása"
+  },
+  "translateLocalSubtitleFile": {
+    "message": "Helyi feliratfájl fordítása"
+  },
+  "translateMangaMenuId": {
+    "message": "Kép fordítása/kép visszaállítása"
+  },
+  "translateText": {
+    "message": "Fordítás \"{text}\""
+  },
+  "translateWithBing": {
+    "message": "Az aktuális oldal ideiglenes fordítása a Microsoft Translator segítségével"
+  },
+  "translateWithClaude": {
+    "message": "Ideiglenesen használja a Claude-ot az aktuális oldal lefordítására."
+  },
+  "translateWithCustom1": {
+    "message": "Egyedi fordítási szolgáltatások ideiglenes használata az aktuális oldal fordításához(1)"
+  },
+  "translateWithCustom2": {
+    "message": "Egyedi fordítási szolgáltatások ideiglenes használata az aktuális oldal fordításához(2)"
+  },
+  "translateWithCustom3": {
+    "message": "Egyedi fordítási szolgáltatások ideiglenes használata az aktuális oldal fordításához(3)"
+  },
+  "translateWithDeepL": {
+    "message": "Az aktuális oldal ideiglenes fordítása a DeepL címmel."
+  },
+  "translateWithGemini": {
+    "message": "Az aktuális oldal ideiglenes fordítása Gemini segítségével"
+  },
+  "translateWithGoogle": {
+    "message": "Az aktuális oldal ideiglenes fordítása a Google segítségével"
+  },
+  "translateWithOpenAI": {
+    "message": "Ideiglenesen fordítsa le az aktuális oldalt OpenAI-val"
+  },
+  "translateWithTransmart": {
+    "message": "Az aktuális oldal ideiglenes fordítása a Tencent Translator segítségével"
+  }
+}

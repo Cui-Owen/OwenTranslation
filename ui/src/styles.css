@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+/*
+ * 朱批 design language, shared by the toolbar popup and the settings page.
+ * 墨 ink carries primary actions and switches; 朱 vermilion only marks
+ * selection, focus and the translated state. Tokens follow the shadcn/ui
+ * naming so the components in src/components/ui stay stock.
+ */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #f4f4f1;
+  --foreground: #15171c;
+  --card: #ffffff;
+  --card-foreground: #15171c;
+  --popover: #ffffff;
+  --popover-foreground: #15171c;
+  --primary: #15171c;
+  --primary-foreground: #ffffff;
+  --secondary: #ecebe6;
+  --secondary-foreground: #15171c;
+  --muted: #efeee9;
+  --muted-foreground: #5c616c;
+  --accent: #fbe7e2;
+  --accent-foreground: #a92e1a;
+  --destructive: #c2361f;
+  --border: #e2e2dc;
+  --input: #d5d5cf;
+  --ring: #e2412a;
+  --vermilion: #e2412a;
+  --jade: #2f7d5b;
+  --ochre: #9a6410;
+  --mark-upper: #15171c;
+  --mark-lower: #e2412a;
+  --mark-idle: #8b909a;
+}
+
+.dark {
+  --background: #0f1013;
+  --foreground: #ecebe6;
+  --card: #17191e;
+  --card-foreground: #ecebe6;
+  --popover: #1b1d22;
+  --popover-foreground: #ecebe6;
+  --primary: #ecebe6;
+  --primary-foreground: #15171c;
+  --secondary: #24272e;
+  --secondary-foreground: #ecebe6;
+  --muted: #1f2228;
+  --muted-foreground: #9a9da6;
+  --accent: #3a1d17;
+  --accent-foreground: #ff8a73;
+  --destructive: #ff6b4f;
+  --border: #2a2d34;
+  --input: #3a3d45;
+  --ring: #ff6b4f;
+  --vermilion: #ff6b4f;
+  --jade: #5bc28f;
+  --ochre: #e0a64a;
+  --mark-upper: #ecebe6;
+  --mark-lower: #ff6b4f;
+  --mark-idle: #7c818b;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-vermilion: var(--vermilion);
+  --color-jade: var(--jade);
+  --color-ochre: var(--ochre);
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --font-sans: Inter, "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", system-ui,
+    -apple-system, "Segoe UI", sans-serif;
+  --font-serif: "Noto Serif SC", "Source Han Serif SC", "Songti SC", "STSong", serif;
+  --font-mono: "JetBrains Mono", "SF Mono", ui-monospace, Menlo, monospace;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/40;
+  }
+  html {
+    color-scheme: light;
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  body.popup {
+    width: 360px;
+    @apply bg-card;
+  }
+  body.side-panel {
+    min-width: 300px;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}

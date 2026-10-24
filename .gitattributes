@@ -1,0 +1,5 @@
+* text=auto
+*.png binary
+*.wasm binary
+*.woff2 binary
+upstream/** -text -whitespace

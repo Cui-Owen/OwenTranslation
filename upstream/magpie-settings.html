@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>欧文翻译 · Magpie 字幕分句</title><link rel="stylesheet" href="magpie-settings.css">
+<main><h1>欧文翻译</h1>
+<p>YouTube 自动字幕通过本机 Magpie 分句，沿用原有双语字幕显示和翻译设置。</p>
+<form id="settings">
+<label class="toggle"><input type="checkbox" id="enabled">启用 Magpie 智能分句</label>
+<label>API 地址<input id="baseUrl" type="url" required value="http://127.0.0.1:3425/v1"></label>
+<div class="model"><label>模型<select id="model" required></select></label><button type="button" id="models">刷新模型</button></div>
+<label>单次超时（秒）<input id="timeout" type="number" min="5" max="55" value="25" required></label>
+<div class="actions"><button type="submit" class="primary">保存</button><button type="button" id="test">测试连接</button><button type="button" id="clear">清除分句缓存</button></div>
+</form>
+<p id="notice" role="status" aria-live="polite"></p><p id="status"></p>
+<a href="options.html" target="_blank">翻译设置 ↗</a>
+<p class="hint">保存后刷新视频页面。启用后，YouTube 自动字幕的 AI 分句只请求 Magpie；服务不可用时保留本地基础分句。翻译服务在翻译设置中选择。</p>
+<p class="hint">Magpie 是本机网关，实际推理位置由其中所选模型决定。分句缓存只保存边界索引，不保存字幕文本。</p>
+</main><script src="magpie-core.js"></script><script src="magpie-settings.js"></script></html>

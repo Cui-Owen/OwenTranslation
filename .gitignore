@@ -1,0 +1,14 @@
+node_modules/
+work/
+outputs/
+.DS_Store
+ui/dist/
+extension/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+__pycache__/
+*.pyc
+upstream/_metadata/

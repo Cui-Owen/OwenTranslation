@@ -1,0 +1,24 @@
+{
+  "baseVersion": "1.34.3",
+  "adapterVersion": "1.0.0",
+  "sourceContentSHA256": "31c56e0a3fc223a4303c3117ac444866f56b90b50c073cc4309e784231027f7a",
+  "patchedContentSHA256": "eb0d67a73f8db1d0c92ddf83d4b3cb2e87d96c89a9817b70d74d4b18f236e2b6",
+  "patches": [
+    "independent local gate",
+    "local segmentation and timing reconstruction",
+    "MV3 cancellable local transport",
+    "settings page and popup entry",
+    "preserve pending translation objects and synchronize export",
+    "Owen brand SVG components only; translation logic unchanged"
+  ],
+  "newFiles": [
+    "magpie-background.js",
+    "magpie-content.js",
+    "magpie-core.js",
+    "magpie-popup-link.js",
+    "magpie-settings.css",
+    "magpie-settings.html",
+    "magpie-settings.js"
+  ],
+  "preBrandingPatchedContentSHA256": "8e368f23fb81cfe536d2d98c8de0a7ef3e7cce84e8e357d7ccf12639c36a5cd9"
+}
