@@ -185,13 +185,14 @@ function rank(s: ServiceItem) {
 export const SERVICE_KEYS = ["translationService", "inputTranslationService", "mouseHoverTranslationService", "subtitleTranslateService"] as const;
 export type ServiceKey = (typeof SERVICE_KEYS)[number];
 
-/** The engine's own way of recording a choice: the type for templates, the id for custom AI. */
-export function selectServicePatch(config: Config, key: ServiceKey, id: string) {
+/**
+ * Records a choice the way the engine reads it back. The engine only honours
+ * userTranslationServices from version 1.18.2 on; this build ships as 1.0.0,
+ * so the top-level key is what it runs with and must hold the id itself.
+ */
+export function selectServicePatch(key: ServiceKey, id: string) {
   return (raw: Config): Config => {
-    const next: Config = { ...raw, translationServiceChangedbyUserAt: new Date().toISOString() };
-    const s = config.translationServices?.[id];
-    if (s?.type === "custom-ai") next[key] = id;
-    else if (s?.type) next[key] = s.type;
+    const next: Config = { ...raw, translationServiceChangedbyUserAt: new Date().toISOString(), [key]: id };
     const prev = raw.userTranslationServices && !Array.isArray(raw.userTranslationServices) ? raw.userTranslationServices : {};
     next.userTranslationServices = { ...prev, [key]: id };
     return next;

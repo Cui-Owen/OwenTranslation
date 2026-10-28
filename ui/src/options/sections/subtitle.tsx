@@ -83,7 +83,7 @@ export function SubtitlePage() {
             config={config}
             value={config.subtitleTranslateService || "inherit"}
             inherit
-            onChange={(id) => updateConfig(selectServicePatch(config, "subtitleTranslateService", id))}
+            onChange={(id) => updateConfig(selectServicePatch("subtitleTranslateService", id))}
             onManage={() => navigate("services")}
             aria-label={t("subtitle.service")}
           />

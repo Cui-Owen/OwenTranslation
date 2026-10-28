@@ -111,7 +111,7 @@ function SceneRow({ label, serviceKey }: { label: string; serviceKey: ServiceKey
         config={config}
         value={config[serviceKey] || (isMain ? "bing" : "inherit")}
         inherit={!isMain}
-        onChange={(id) => updateConfig(selectServicePatch(config, serviceKey, id))}
+        onChange={(id) => updateConfig(selectServicePatch(serviceKey, id))}
         aria-label={label}
       />
     </Row>
@@ -242,7 +242,7 @@ function ServiceDetail({ id }: { id: string }) {
       actions={
         <>
           {!isDefault && (
-            <Button variant="outline" disabled={!item.ready} onClick={() => updateConfig(selectServicePatch(config, "translationService", id))}>
+            <Button variant="outline" disabled={!item.ready} onClick={() => updateConfig(selectServicePatch("translationService", id))}>
               <StarIcon />
               {t("services.makeDefault")}
             </Button>

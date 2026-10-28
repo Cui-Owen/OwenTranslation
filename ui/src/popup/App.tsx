@@ -142,7 +142,7 @@ export function App() {
   };
 
   const setService = async (id: string) => {
-    await updateConfig(selectServicePatch(config, "translationService", id));
+    await updateConfig(selectServicePatch("translationService", id));
     await send("updateTranslationService", { translationService: id });
     if (translated) await send(config.generalRule?.isTranslateWhenServiceChanged === false ? "restorePage" : "translatePage", { trigger: "popup" });
   };

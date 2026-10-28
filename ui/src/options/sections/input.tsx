@@ -37,7 +37,7 @@ export function InputPage() {
             config={config}
             value={config.inputTranslationService || "inherit"}
             inherit
-            onChange={(id) => updateConfig(selectServicePatch(config, "inputTranslationService", id))}
+            onChange={(id) => updateConfig(selectServicePatch("inputTranslationService", id))}
             onManage={() => navigate("services")}
             aria-label={t("input.service")}
           />

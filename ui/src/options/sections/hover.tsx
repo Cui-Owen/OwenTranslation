@@ -35,7 +35,7 @@ export function HoverPage() {
             config={config}
             value={config.mouseHoverTranslationService || "inherit"}
             inherit
-            onChange={(id) => updateConfig(selectServicePatch(config, "mouseHoverTranslationService", id))}
+            onChange={(id) => updateConfig(selectServicePatch("mouseHoverTranslationService", id))}
             onManage={() => navigate("services")}
             aria-label={t("hover.service")}
           />

@@ -94,7 +94,7 @@ export function GeneralPage() {
             className="w-56"
             config={config}
             value={config.translationService}
-            onChange={(id) => updateConfig(selectServicePatch(config, "translationService", id))}
+            onChange={(id) => updateConfig(selectServicePatch("translationService", id))}
             onManage={() => navigate("services")}
             aria-label={t("general.service")}
           />
