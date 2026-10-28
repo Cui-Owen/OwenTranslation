@@ -44,6 +44,7 @@ export const M = {
   "page.translated": ["已翻译", "Translated", "已翻譯"],
   "page.error": ["翻译出错", "Error", "翻譯出錯"],
   "page.unsupported": ["此页面不可翻译", "Can't translate this page", "此頁面無法翻譯"],
+  "page.restricted": ["浏览器限制扩展访问此页面", "Browser blocks extension access", "瀏覽器限制擴充功能存取此頁面"],
   "page.reload": ["请刷新页面", "Reload the page", "請重新整理頁面"],
   "page.noPage": ["没有可翻译的页面", "No page", "沒有可翻譯的頁面"],
   "site.default": ["按默认", "Default", "依預設"],

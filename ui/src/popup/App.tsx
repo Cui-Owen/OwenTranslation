@@ -29,11 +29,11 @@ import { languageName } from "@/lib/languages";
 import { activeTab, background, content, extensionVersion, openOptions } from "@/lib/runtime";
 import { selectServicePatch } from "@/lib/services";
 import { commandShortcuts, formatShortcut } from "@/lib/shortcuts";
-import { anyMatch, translatable, withoutMatches } from "@/lib/url-match";
+import { anyMatch, browserRestricted, translatable, withoutMatches } from "@/lib/url-match";
 import { cn } from "@/lib/utils";
 
 type PageStatus = "Original" | "Translating" | "Translated" | "Error";
-type Reach = "checking" | "ready" | "unsupported" | "unreachable";
+type Reach = "checking" | "ready" | "unsupported" | "restricted" | "unreachable";
 
 const HOVER_KEYS = ["Ctrl", "Alt", "Shift", "MouseHoldKeyPressHold", "Auto"] as const;
 const HOVER_LABEL: Record<string, MessageKey> = {
@@ -51,6 +51,10 @@ function usePage(tab: chrome.tabs.Tab | undefined) {
 
   React.useEffect(() => {
     if (!tab?.id) return;
+    if (browserRestricted(tab.url)) {
+      setReach("restricted");
+      return;
+    }
     if (!translatable(tab.url)) {
       setReach("unsupported");
       return;
@@ -356,7 +360,9 @@ function IconButton({ label, children, onClick }: { label: string; children: Rea
 function PageLine({ host, reach, status }: { host: string; reach: Reach; status: PageStatus }) {
   const { t } = useI18n();
   const state =
-    reach === "unsupported"
+    reach === "restricted"
+      ? { text: t("page.restricted"), tone: "muted" }
+      : reach === "unsupported"
       ? { text: t("page.unsupported"), tone: "muted" }
       : reach === "unreachable"
         ? { text: t("page.reload"), tone: "warn" }

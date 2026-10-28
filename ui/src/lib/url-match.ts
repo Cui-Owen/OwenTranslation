@@ -43,12 +43,29 @@ export function withoutMatches(url: string, patterns: unknown): string[] {
   return list.filter((p) => !(typeof p === "string" && matchesUrl(url, p)));
 }
 
+/** Browser-owned sites reject content scripts even with <all_urls> access. */
+export function browserRestricted(url?: string, userAgent = navigator.userAgent): boolean {
+  if (!url) return false;
+  try {
+    const u = new URL(url);
+    if (!["http:", "https:"].includes(u.protocol)) return false;
+    const host = u.hostname;
+    if (host === "chromewebstore.google.com" || (host === "chrome.google.com" && /^\/webstore(?:\/|$)/.test(u.pathname))) return true;
+    if (host === "microsoftedge.microsoft.com" && /^\/addons(?:\/|$)/.test(u.pathname)) return true;
+    if (!/Edg\//.test(userAgent)) return false;
+    return ["copilot.microsoft.com", "edgeservices.bing.com", "explore.microsoft.com", "www.microsoft365.com", "rewards.bing.com"].includes(host)
+      || host.endsWith(".cloud.microsoft");
+  } catch {
+    return false;
+  }
+}
+
 export function translatable(url?: string): boolean {
   if (!url) return false;
   try {
     const u = new URL(url);
     if (!["http:", "https:", "file:"].includes(u.protocol)) return false;
-    return !/^https:\/\/(microsoftedge\.microsoft\.com\/addons|chromewebstore\.google\.com)\//.test(url);
+    return !browserRestricted(url);
   } catch {
     return false;
   }
