@@ -7,7 +7,7 @@ const slim=require('./shrink.cjs');
 const root=path.resolve(__dirname,'..'),src=path.join(root,'upstream'),dest=path.join(root,'extension');
 const files=new Map();
 const ctx={walk,file(name){if(!files.has(name))files.set(name,new Patch(name,fs.readFileSync(path.join(src,name),'utf8')));return files.get(name);}};
-const patches=['core','media','ui','account','offline','network','icons','unlock','selection','inpage','brand','segment','sidepanel'].map(name=>require('./patch-'+name+'.cjs'));
+const patches=['core','media','ui','account','offline','network','icons','unlock','selection','inpage','remount','brand','segment','sidepanel'].map(name=>require('./patch-'+name+'.cjs'));
 // The toolbar popup, settings page and text side panel are built from ui/
 // (React + Radix, see ui/README.md); the upstream pages and stylesheets behind
 // them are not shipped. side-panel.js stays as the side panel's engine.
