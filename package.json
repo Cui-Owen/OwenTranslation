@@ -1,6 +1,6 @@
 {
   "name": "owen-translation",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "description": "欧文翻译：网页文字、视频字幕与 AI 智能分句",
   "scripts": {

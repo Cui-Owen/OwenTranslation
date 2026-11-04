@@ -2,7 +2,7 @@
 
 网页双语翻译、视频双语字幕与 AI 智能分句。支持自定义翻译服务、本地术语库和多服务文本对比。
 
-**版本：1.0.0** · [下载安装包](https://github.com/Cui-Owen/OwenTranslation/releases/tag/v1)
+**版本：1.1.0** · [下载安装包](https://github.com/Cui-Owen/OwenTranslation/releases/tag/v1.1.0)
 
 ## 安装
 

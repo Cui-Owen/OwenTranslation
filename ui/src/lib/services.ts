@@ -187,7 +187,7 @@ export type ServiceKey = (typeof SERVICE_KEYS)[number];
 
 /**
  * Records a choice the way the engine reads it back. The engine only honours
- * userTranslationServices from version 1.18.2 on; this build ships as 1.0.0,
+ * userTranslationServices from version 1.18.2 on; this build ships as 1.x,
  * so the top-level key is what it runs with and must hold the id itself.
  */
 export function selectServicePatch(key: ServiceKey, id: string) {
